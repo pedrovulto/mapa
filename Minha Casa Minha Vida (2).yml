@@ -1,0 +1,2161 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: Minha Casa Minha Vida
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.4
+workflow:
+  conversation_variables:
+  - description: ''
+    id: 02365d91-ae06-4394-8c7b-d0ebb75f586e
+    name: cidade_conf
+    selector:
+    - conversation
+    - cidade_conf
+    value: ''
+    value_type: string
+  - description: ''
+    id: 20c07482-7857-4f7c-b82c-75025cf2c402
+    name: estado_conf
+    selector:
+    - conversation
+    - estado_conf
+    value: ''
+    value_type: string
+  - description: ''
+    id: ffcf8035-b930-4a93-a37f-ab01fe378627
+    name: nome_conf
+    selector:
+    - conversation
+    - nome_conf
+    value: ''
+    value_type: string
+  - description: ''
+    id: bacb5779-659d-4e42-aa8f-0cbd787f3811
+    name: email_conf
+    selector:
+    - conversation
+    - email_conf
+    value: ''
+    value_type: string
+  - description: ''
+    id: 73c09405-a799-4c03-ae8f-83163909b39b
+    name: Requisi
+    selector:
+    - conversation
+    - Requisi
+    value: ''
+    value_type: string
+  - description: ''
+    id: 5613bd01-8b96-43b6-a99e-861fe687beef
+    name: Cidade
+    selector:
+    - conversation
+    - Cidade
+    value: ''
+    value_type: string
+  - description: ''
+    id: f08f24d1-f8d6-4f6c-b2af-19b6f2c70bb1
+    name: Estado
+    selector:
+    - conversation
+    - Estado
+    value: ''
+    value_type: string
+  - description: ''
+    id: 534b967b-c200-41f7-9b52-d1d8160448ae
+    name: Email
+    selector:
+    - conversation
+    - Email
+    value: ''
+    value_type: string
+  - description: ''
+    id: c69940ae-311e-4da4-b629-8687b85ecdea
+    name: Nome
+    selector:
+    - conversation
+    - Nome
+    value: ''
+    value_type: string
+  environment_variables:
+  - description: ''
+    id: c8d687e3-f479-4783-9e5d-690fe4c0053f
+    name: webhook
+    selector:
+    - env
+    - webhook
+    value: https://webhook.chatcorretor.com/webhook/aa644b91-6b54-47fc-a64f-36c846f67337
+    value_type: string
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 1718856295500-source-1718857880366-target
+      selected: false
+      source: '1718856295500'
+      sourceHandle: source
+      target: '1718857880366'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: http-request
+      id: 1718857880366-source-17188578372530-target
+      selected: false
+      source: '1718857880366'
+      sourceHandle: source
+      target: '17188578372530'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 17188578372530-source-1718858713759-target
+      selected: false
+      source: '17188578372530'
+      sourceHandle: source
+      target: '1718858713759'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: http-request
+      id: 1720354307281-source-1718856295500-target
+      selected: false
+      source: '1720354307281'
+      sourceHandle: source
+      target: '1718856295500'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17203562965740-source-17203563735670-target
+      selected: false
+      source: '17203562965740'
+      sourceHandle: source
+      target: '17203563735670'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: http-request
+      id: 17203563735670-source-17292793217870-target
+      selected: false
+      source: '17203563735670'
+      sourceHandle: source
+      target: '17292793217870'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: parameter-extractor
+      id: 17292793217870-source-1732306542389-target
+      selected: false
+      source: '17292793217870'
+      sourceHandle: source
+      target: '1732306542389'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 1732306542389-source-1732308872125-target
+      selected: false
+      source: '1732306542389'
+      sourceHandle: source
+      target: '1732308872125'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 1732306542389-source-17323089408700-target
+      selected: false
+      source: '1732306542389'
+      sourceHandle: source
+      target: '17323089408700'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 1732306542389-source-17323089574620-target
+      selected: false
+      source: '1732306542389'
+      sourceHandle: source
+      target: '17323089574620'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1732308872125-source-17323093762741-target
+      selected: false
+      source: '1732308872125'
+      sourceHandle: source
+      target: '17323093762741'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: http-request
+      id: 17323093762741-false-17323093762740-target
+      selected: false
+      source: '17323093762741'
+      sourceHandle: 'false'
+      target: '17323093762740'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: if-else
+      id: 17323089574620-source-17323093911141-target
+      selected: false
+      source: '17323089574620'
+      sourceHandle: source
+      target: '17323093911141'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: http-request
+      id: 17323093911141-false-17323093911140-target
+      selected: false
+      source: '17323093911141'
+      sourceHandle: 'false'
+      target: '17323093911140'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: if-else
+      id: 17323089408700-source-17323094126831-target
+      selected: false
+      source: '17323089408700'
+      sourceHandle: source
+      target: '17323094126831'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: http-request
+      id: 17323094126831-false-17323094126830-target
+      selected: false
+      source: '17323094126831'
+      sourceHandle: 'false'
+      target: '17323094126830'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1732721887334-true-17327200343550-target
+      selected: false
+      source: '1732721887334'
+      sourceHandle: 'true'
+      target: '17327200343550'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 1732735562523-source-1732735570386-target
+      selected: false
+      source: '1732735562523'
+      sourceHandle: source
+      target: '1732735570386'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: http-request
+      id: 1732735570386-source-17327356458210-target
+      selected: false
+      source: '1732735570386'
+      sourceHandle: source
+      target: '17327356458210'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 17327404535220-source-1732308923021-target
+      selected: false
+      source: '17327404535220'
+      sourceHandle: source
+      target: '1732308923021'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: parameter-extractor
+      id: 17327356458210-source-17327404535220-target
+      selected: false
+      source: '17327356458210'
+      sourceHandle: source
+      target: '17327404535220'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1732308923021-source-17327406969760-target
+      source: '1732308923021'
+      sourceHandle: source
+      target: '17327406969760'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1732735519835-true-1732735562523-target
+      source: '1732735519835'
+      sourceHandle: 'true'
+      target: '1732735562523'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: code
+      id: 1718649258644-source-1720354307281-target
+      source: '1718649258644'
+      sourceHandle: source
+      target: '1720354307281'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: http-request
+      id: 1718858713759-source-17327217646320-target
+      source: '1718858713759'
+      sourceHandle: source
+      target: '17327217646320'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: parameter-extractor
+      id: 17327200343550-source-1733165178477-target
+      source: '17327200343550'
+      sourceHandle: source
+      target: '1733165178477'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 1733165178477-source-1732721330980-target
+      source: '1733165178477'
+      sourceHandle: source
+      target: '1732721330980'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1732721330980-source-1732735519835-target
+      source: '1732721330980'
+      sourceHandle: source
+      target: '1732735519835'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1733166042979-true-1733166057163-target
+      source: '1733166042979'
+      sourceHandle: 'true'
+      target: '1733166057163'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: if-else
+      id: 17327217646320-source-1732721887334-target
+      source: '17327217646320'
+      sourceHandle: source
+      target: '1732721887334'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 1718858713759-source-1733257956481-target
+      source: '1718858713759'
+      sourceHandle: source
+      target: '1733257956481'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: if-else
+      id: 1733257956481-source-1732721887334-target
+      source: '1733257956481'
+      sourceHandle: source
+      target: '1732721887334'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: if-else
+      id: 17334999677590-source-1733500137498-target
+      source: '17334999677590'
+      sourceHandle: source
+      target: '1733500137498'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1732721887334-false-17334999677590-target
+      source: '1732721887334'
+      sourceHandle: 'false'
+      target: '17334999677590'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1733500137498-true-17203562965740-target
+      source: '1733500137498'
+      sourceHandle: 'true'
+      target: '17203562965740'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1733500137498-false-17335017328600-target
+      source: '1733500137498'
+      sourceHandle: 'false'
+      target: '17335017328600'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17335017328600-source-1733501746468-target
+      source: '17335017328600'
+      sourceHandle: source
+      target: '1733501746468'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: http-request
+      id: 1733501746468-source-17335025122050-target
+      source: '1733501746468'
+      sourceHandle: source
+      target: '17335025122050'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: parameter-extractor
+      id: 17335025122050-source-1732306542389-target
+      source: '17335025122050'
+      sourceHandle: source
+      target: '1732306542389'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: if-else
+      id: 17327406969760-false-1733166042979-target
+      source: '17327406969760'
+      sourceHandle: 'false'
+      target: '1733166042979'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Iniciar
+        type: start
+        variables:
+        - label: id_pixel
+          max_length: 256
+          options: []
+          required: false
+          type: text-input
+          variable: id_pixel
+      height: 90
+      id: '1718649258644'
+      position:
+        x: 30
+        y: 314.5
+      positionAbsolute:
+        x: 30
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config:
+            api_key: AVYhAAIjcDEyNzJlNmYyOGE2NzI0NjllYmZkYWViY2Q0ZjZiN2FkMnAxMA
+            type: bearer
+          type: api-key
+        body:
+          data:
+          - type: text
+            value: '{
+
+              "user": "{{#sys.query#}}"
+
+              }'
+          type: json
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Adiciona ao Contexto
+        type: http-request
+        url: https://fancy-lark-22049.upstash.io/rpush/{{#sys.conversation_id#}}
+        variables: []
+      height: 128
+      id: '1718856295500'
+      position:
+        x: 636
+        y: 314.5
+      positionAbsolute:
+        x: 636
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: ''
+          type: none
+        desc: ''
+        headers: Authorization:Bearer AVYhAAIjcDEyNzJlNmYyOGE2NzI0NjllYmZkYWViY2Q0ZjZiN2FkMnAxMA
+        method: get
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Lê
+        type: http-request
+        url: https://fancy-lark-22049.upstash.io/lrange/{{#sys.conversation_id#}}/{{#1718857880366.first#}}/{{#1718857880366.last#}}
+        variables: []
+      height: 164
+      id: '17188578372530'
+      position:
+        x: 1242
+        y: 314.5
+      positionAbsolute:
+        x: 1242
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\nreduce_by = 10\n\ndef main(number: str) -> dict:\n   \
+          \ \"\"\"\n    Esta função retorna um dicionário com dois números:\n    1.\
+          \ 'original': O número extraído do JSON passado como parâmetro.\n    2.\
+          \ 'reduced': O número reduzido pelo segundo parâmetro, garantindo que o\
+          \ valor não seja menor que zero.\n    \n    Args:\n    number (str): Uma\
+          \ string JSON contendo o número original.\n    reduce_by (int): O valor\
+          \ pelo qual reduzir o número original.\n    \n    Returns:\n    dict: Um\
+          \ dicionário contendo o número original e o número reduzido.\n    \"\"\"\
+          \n    number_dict = json.loads(number)\n    number_value = number_dict[\"\
+          result\"]\n\n    reduced_number = number_value - reduce_by\n    if reduced_number\
+          \ < 0:\n        reduced_number = 0\n    return {\n        \"last\": number_value,\n\
+          \        \"first\": reduced_number\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          first:
+            children: null
+            type: number
+          last:
+            children: null
+            type: number
+        selected: false
+        title: Lista Ultimas Mensagens
+        type: code
+        variables:
+        - value_selector:
+          - '1718856295500'
+          - body
+          variable: number
+      height: 54
+      id: '1718857880366'
+      position:
+        x: 939
+        y: 314.5
+      positionAbsolute:
+        x: 939
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(body: str) -> dict:\n    try:\n        data = json.loads(body)\n\
+          \    except json.JSONDecodeError as e:\n        print(f\"Erro ao decodificar\
+          \ JSON do body: {e}\")\n        return {\n            \"contextArray\":\
+          \ [],\n            \"contextString\": \"\"\n        }\n    \n    # Extrai\
+          \ a lista de mensagens\n    messages_json_list = data.get(\"result\", [])\n\
+          \    \n    # Inicializa uma lista para armazenar as mensagens desserializadas\n\
+          \    messages = []\n    \n    # Desserializa cada mensagem e adiciona à\
+          \ lista de mensagens\n    for message_json in messages_json_list:\n    \
+          \    try:\n            # Desserializa a mensagem JSON\n            message_dict\
+          \ = json.loads(message_json)\n            # Itera sobre todas as chaves\
+          \ e valores no dicionário da mensagem\n            for key, value in message_dict.items():\n\
+          \                messages.append(f\"{key}: {value}\")\n        except json.JSONDecodeError\
+          \ as e:\n            print(f\"Erro ao decodificar JSON na mensagem: {e}\"\
+          )\n            continue\n    \n    # Junta as mensagens em uma única string,\
+          \ separadas por quebras de linha\n    messages_str = \"\"\"\n    \n    \"\
+          \"\".join(messages)\n    \n    return {\n        \"contextArray\": messages,\n\
+          \        \"contextString\": messages_str\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          contextArray:
+            children: null
+            type: array[string]
+          contextString:
+            children: null
+            type: string
+        selected: false
+        title: Salva em contexto
+        type: code
+        variables:
+        - value_selector:
+          - '17188578372530'
+          - body
+          variable: body
+      height: 54
+      id: '1718858713759'
+      position:
+        x: 1545
+        y: 314.5
+      positionAbsolute:
+        x: 1545
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import datetime\n\ndef main() -> dict:\n    # Obtém a data e hora atuais\n\
+          \    now = datetime.datetime.now()\n    \n    # Formata a data e a hora\
+          \ no formato desejado\n    diaAtual = now.strftime('%d/%m/%Y %H:%M:%S')\n\
+          \    \n    # Obtém o dia da semana como um número (0 = segunda-feira, ...,\
+          \ 6 = domingo)\n    dia_semana_num = now.weekday()\n    \n    # Lista de\
+          \ nomes dos dias da semana em português (segunda-feira = 0, ..., domingo\
+          \ = 6)\n    dias_semana = ['segunda-feira', 'terça-feira', 'quarta-feira',\
+          \ 'quinta-feira', 'sexta-feira', 'sábado', 'domingo']\n    \n    # Mapeia\
+          \ o número do dia da semana para o nome correspondente em português\n  \
+          \  diaSemana = dias_semana[dia_semana_num]\n    \n    return {\n       \
+          \ \"diaAtual\": diaAtual,\n        \"diaSemana\": diaSemana\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          diaAtual:
+            children: null
+            type: string
+          diaSemana:
+            children: null
+            type: string
+        selected: false
+        title: Hora Atual
+        type: code
+        variables: []
+      height: 54
+      id: '1720354307281'
+      position:
+        x: 333
+        y: 314.5
+      positionAbsolute:
+        x: 333
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1718858713759'
+          - contextString
+        desc: ''
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 1
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        prompt_template:
+        - id: 36d188f9-2a89-4bd3-9f67-6c0732145eeb
+          role: system
+          text: "<Prompt>\n  <Personalidade>\n    <Nome>Gabriela</Nome>\n    <Descricao>\n\
+            \      Você é uma assistente dedicada a ajudar pessoas a conquistarem\
+            \ a casa própria\n      pelo programa Minha Casa Minha Vida. Seja simpática,\
+            \ acolhedora e use linguagem simples.\n      Fale como uma amiga e mostre\
+            \ empatia.\n    </Descricao>\n  </Personalidade>\n  \n  <InstrucoesDeConversa>\n\
+            \    <Passo1>\n      \"Oi, tudo bem? Sou a Gabriela, assistente do Minha\
+            \ Casa Minha Vida. Qual seu nome?\"\n    </Passo1>\n    <Passo2>\n   \
+            \   \"Prazer, [nome]! \U0001F60A\"\n    </Passo2>\n    <Passo2a>\n   \
+            \   \"Salva meu número, [nome]! Já salvei o seu. Ao salvar, me avisa!\
+            \ \U0001F609 Me conta, [nome], como posso te ajudar?\"\n    </Passo2a>\n\
+            \    <SeClienteDificuldade>\n      \"Entendo [dificuldade]. O programa\
+            \ oferece opções que vão te apoiar.\"\n    </SeClienteDificuldade>\n \
+            \   <AposEntenderDificuldade>\n      <ExemploEnvioLink1>\n        \"[nome],\
+            \ você consegue [o interesse]. Acesse o link abaixo e veja como:\U0001F447\
+            \nhttps://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\"\
+            \n      </ExemploEnvioLink1>\n      <ExemploEnvioLink2>\n        \"[nome],\
+            \ dê uma olhada neste link:\U0001F447\nhttps://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\"\
+            \n      </ExemploEnvioLink2>\n    </AposEntenderDificuldade>\n  </InstrucoesDeConversa>\n\
+            \  \n  <LinkInformacoes>\n    <Orientacao>\n      Envie o link no momento\
+            \ certo, após entender a necessidade.\n      Use sempre o link puro:\n\
+            \      https://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\n\
+            \    </Orientacao>\n    <ExemploEnvio>\n      \"[nome], confira aqui:\U0001F447\
+            \nhttps://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\"\
+            \n    </ExemploEnvio>\n    <ExemploIncentivo>\n      \"No site há respostas\
+            \ e simulações.\"\n    </ExemploIncentivo>\n    <ExemploCadastro>\n  \
+            \    \"Confira seu cadastro:\U0001F447\nhttps://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\"\
+            \n    </ExemploCadastro>\n  </LinkInformacoes>\n  \n  <PerguntasAbertas>\n\
+            \    <Pergunta1>\"Quais suas principais dúvidas?\"</Pergunta1>\n    <Pergunta2>\"\
+            Você já tem cadastro no Minha Casa Minha Vida?\"</Pergunta2>\n    <Observacao>\n\
+            \      \"Ouça, seja empática e clara.\"\n    </Observacao>\n  </PerguntasAbertas>\n\
+            \  \n  <Dicas>\n    <Contato>\n      \"Salva meu contato, [nome]! Posso\
+            \ enviar mais dicas. \U0001F609\"\n    </Contato>\n    <NaoInsistirNoLink>\n\
+            \      \"Se não quiser o link, tudo bem.\"\n    </NaoInsistirNoLink>\n\
+            \  </Dicas>\n  \n  <EstiloDeResposta>\n    <Caracteristicas>\n      <LimiteCaracteres>Máx\
+            \ 150 caracteres por mensagem.</LimiteCaracteres>\n      <Emojis>Use emojis.</Emojis>\n\
+            \      <EvitarNegativas>Não usar \"Infelizmente\".</EvitarNegativas>\n\
+            \      <NaoAgendar>Não agendar visitas ou ligações.</NaoAgendar>\n   \
+            \   <FocoBeneficios>Mantenha foco nos benefícios.</FocoBeneficios>\n \
+            \   </Caracteristicas>\n  </EstiloDeResposta>\n  \n  <Variacoes>\n   \
+            \ <Instrucoes>\n      Utilize sinônimos e mude a estrutura das frases\
+            \ quando possível.\n      Adapte as mensagens ao contexto do cliente,\
+            \ evitando soar mecânico.\n      Ajuste o tom conforme a situação, mantendo\
+            \ a simpatia e clareza.\n      Evite repetir exatamente a mesma frase\
+            \ em cada atendimento.\n    </Instrucoes>\n  </Variacoes>\n  \n  <RecuperacaoDeConhecimento>\n\
+            \    {{#context#}}  \n  </RecuperacaoDeConhecimento>\n  \n  <ContextoDaConversa>\n\
+            \    {{#1718858713759.contextString#}}  \n  </ContextoDaConversa>\n  \n\
+            \  <ContextoDataHoraAtual>\n    {{#1720354307281.diaAtual#}}  \n    {{#1720354307281.diaSemana#}}\
+            \  \n  </ContextoDataHoraAtual>\n  \n</Prompt>"
+        selected: false
+        title: Gera Resposta
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+            variable_selector:
+            - sys
+            - files
+          enabled: false
+      height: 98
+      id: '17203562965740'
+      position:
+        x: 3060
+        y: 523.5
+      positionAbsolute:
+        x: 3060
+        y: 523.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#17203562965740.text#}}'
+        desc: ''
+        selected: false
+        title: Resposta (3)
+        type: answer
+        variables: []
+      height: 102
+      id: '17203563735670'
+      position:
+        x: 3363
+        y: 557.5
+      positionAbsolute:
+        x: 3363
+        y: 557.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config:
+            api_key: AVYhAAIjcDEyNzJlNmYyOGE2NzI0NjllYmZkYWViY2Q0ZjZiN2FkMnAxMA
+            type: bearer
+          type: api-key
+        body:
+          data:
+          - type: text
+            value: '{
+
+              "assistant": "{{#17203562965740.text#}}"
+
+              }'
+          type: json
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Adiciona ao Contexto
+        type: http-request
+        url: https://fancy-lark-22049.upstash.io/rpush/{{#sys.conversation_id#}}
+        variables: []
+      height: 128
+      id: '17292793217870'
+      position:
+        x: 3666
+        y: 491.5
+      positionAbsolute:
+        x: 3666
+        y: 491.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: 'Extraia o primeiro nome do cliente e o e-mail fornecidos na
+          mensagem. O nome deve ser uma string contendo o primeiro nome, e o e-mail
+          deve ser um endereço de e-mail válido.
+
+          '
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        parameters:
+        - description: Nome do cliente
+          name: Nome
+          required: false
+          type: string
+        - description: Email do Usuário
+          name: Email
+          required: false
+          type: string
+        - description: Estado onde o cliente mora
+          name: Estado
+          required: false
+          type: string
+        - description: Cidade onde o cliente mora
+          name: Cidade
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: Extrator de parâmetros
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1732306542389'
+      position:
+        x: 3969
+        y: 508.5
+      positionAbsolute:
+        x: 3969
+        y: 508.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Nome
+        desc: ''
+        input_variable_selector:
+        - '1732306542389'
+        - Nome
+        selected: false
+        title: Atribuidor (Nome)
+        type: assigner
+        write_mode: over-write
+      height: 88
+      id: '1732308872125'
+      position:
+        x: 4272
+        y: 504.5
+      positionAbsolute:
+        x: 4272
+        y: 504.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Email
+        desc: ''
+        input_variable_selector:
+        - '17327404535220'
+        - Email
+        selected: false
+        title: Atribuidor (E-mail)
+        type: assigner
+        write_mode: over-write
+      height: 88
+      id: '1732308923021'
+      position:
+        x: 4878
+        y: 314.5
+      positionAbsolute:
+        x: 4878
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Estado
+        desc: ''
+        input_variable_selector:
+        - '1732306542389'
+        - Estado
+        selected: false
+        title: Atribuidor (Estado)
+        type: assigner
+        write_mode: over-write
+      height: 88
+      id: '17323089408700'
+      position:
+        x: 4272
+        y: 848.2411011265922
+      positionAbsolute:
+        x: 4272
+        y: 848.2411011265922
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Cidade
+        desc: ''
+        input_variable_selector:
+        - '1732306542389'
+        - Cidade
+        selected: false
+        title: Atribuidor (Cidade)
+        type: assigner
+        write_mode: over-write
+      height: 88
+      id: '17323089574620'
+      position:
+        x: 4272
+        y: 675.5
+      positionAbsolute:
+        x: 4272
+        y: 675.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        desc: ''
+        headers: Contato:{{#sys.user_id#}}
+        method: post
+        params: 'Nome:{{#conversation.Nome#}}
+
+          Contato:{{#1718649258644.id_pixel#}}'
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Requisição HTTP 4 (1)
+        type: http-request
+        url: '{{#env.webhook#}}'
+        variables: []
+      height: 96
+      id: '17323093762740'
+      position:
+        x: 4878
+        y: 524.5
+      positionAbsolute:
+        x: 4878
+        y: 524.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: 377b9828-d67b-42c2-8a77-f85d6d711c24
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - Nome
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: SE/SENÃO (1)
+        type: if-else
+      height: 126
+      id: '17323093762741'
+      position:
+        x: 4575
+        y: 492.5
+      positionAbsolute:
+        x: 4575
+        y: 492.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        desc: ''
+        headers: Contato:{{#sys.user_id#}}
+        method: post
+        params: 'Cidade:{{#conversation.Cidade#}}
+
+          Contato:{{#1718649258644.id_pixel#}}'
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Requisição HTTP 4 (1)
+        type: http-request
+        url: '{{#env.webhook#}}'
+        variables: []
+      height: 96
+      id: '17323093911140'
+      position:
+        x: 4878
+        y: 695.5
+      positionAbsolute:
+        x: 4878
+        y: 695.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: d1338e6e-6672-4134-ae70-df0dcc7ebcdb
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - Cidade
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: SE/SENÃO (1)
+        type: if-else
+      height: 126
+      id: '17323093911141'
+      position:
+        x: 4575
+        y: 663.5
+      positionAbsolute:
+        x: 4575
+        y: 663.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        desc: ''
+        headers: Contato:{{#sys.user_id#}}
+        method: post
+        params: 'Estado:{{#conversation.Estado#}}
+
+          Contato:{{#1718649258644.id_pixel#}}'
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Requisição HTTP 4 (1)
+        type: http-request
+        url: '{{#env.webhook#}}'
+        variables: []
+      height: 96
+      id: '17323094126830'
+      position:
+        x: 4878
+        y: 866.5
+      positionAbsolute:
+        x: 4878
+        y: 866.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: c8b9518a-d391-4bba-aa27-4ee373608708
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - Estado
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: SE/SENÃO (1)
+        type: if-else
+      height: 126
+      id: '17323094126831'
+      position:
+        x: 4575
+        y: 834.5
+      positionAbsolute:
+        x: 4575
+        y: 834.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        desc: ''
+        headers: 'apikey:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1cW5uYnZqdG9ycnhkeXRyc2F4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMTUyNDg2MiwiZXhwIjoyMDQ3MTAwODYyfQ.h9fZeiI0mKEmBEzHYPUimqIkaBqGJPrdgqJecmH88JA
+
+          Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1cW5uYnZqdG9ycnhkeXRyc2F4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMTUyNDg2MiwiZXhwIjoyMDQ3MTAwODYyfQ.h9fZeiI0mKEmBEzHYPUimqIkaBqGJPrdgqJecmH88JA'
+        isInIteration: true
+        iteration_id: '1732719213029'
+        method: get
+        params: 'id:eq.{{#1718649258644.id_pixel#}}
+
+          select:E-mail'
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Requisição E-mail_conf
+        type: http-request
+        url: https://suqnnbvjtorrxdytrsax.supabase.co/rest/v1/Pixel%20Benef%C3%ADcios%20Sociais?
+        variables: []
+      height: 126
+      id: '17327200343550'
+      position:
+        x: 2454
+        y: 314.5
+      positionAbsolute:
+        x: 2454
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - email_conf
+        desc: ''
+        input_variable_selector:
+        - '1733165178477'
+        - Email
+        selected: false
+        title: Atribuidor E-mail_conf
+        type: assigner
+        write_mode: over-write
+      height: 88
+      id: '1732721330980'
+      position:
+        x: 3060
+        y: 314.5
+      positionAbsolute:
+        x: 3060
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        desc: ''
+        headers: 'apikey:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1cW5uYnZqdG9ycnhkeXRyc2F4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMTUyNDg2MiwiZXhwIjoyMDQ3MTAwODYyfQ.h9fZeiI0mKEmBEzHYPUimqIkaBqGJPrdgqJecmH88JA
+
+          Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1cW5uYnZqdG9ycnhkeXRyc2F4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMTUyNDg2MiwiZXhwIjoyMDQ3MTAwODYyfQ.h9fZeiI0mKEmBEzHYPUimqIkaBqGJPrdgqJecmH88JA'
+        isInIteration: true
+        iteration_id: '1732719213029'
+        method: get
+        params: 'id:eq.{{#1718649258644.id_pixel#}}
+
+          select:Pixel'
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Requisição Pixel_conf
+        type: http-request
+        url: https://suqnnbvjtorrxdytrsax.supabase.co/rest/v1/Pixel%20Benef%C3%ADcios%20Sociais?
+        variables: []
+      height: 126
+      id: '17327217646320'
+      position:
+        x: 1848
+        y: 314.5
+      positionAbsolute:
+        x: 1848
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 189f8a1e-5722-4cfa-8ee4-f167166607cb
+            value: https://socarros.net/minha-casa-minha-vida-2024/
+            varType: string
+            variable_selector:
+            - '17327217646320'
+            - body
+          - comparison_operator: ≥
+            id: 115718f1-bc87-4311-b178-aa096452859c
+            value: '2'
+            varType: number
+            variable_selector:
+            - '1733257956481'
+            - link_count
+          id: 'true'
+          logical_operator: or
+        desc: ''
+        selected: false
+        title: SE/SENÃO 6
+        type: if-else
+      height: 152
+      id: '1732721887334'
+      position:
+        x: 2151
+        y: 314.5
+      positionAbsolute:
+        x: 2151
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: a5d8e03c-da92-497e-94c3-1a832a7aa23f
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - email_conf
+          - comparison_operator: is
+            id: baa11b22-e984-4fbf-acbd-ca9751416a37
+            value: undefined
+            varType: string
+            variable_selector:
+            - conversation
+            - email_conf
+          - comparison_operator: contains
+            id: c0227523-902e-4020-9c0a-033aaf5c4c38
+            value: Não disponível
+            varType: string
+            variable_selector:
+            - conversation
+            - email_conf
+          - comparison_operator: contains
+            id: 11706378-0975-4344-bae7-20c0980d91d2
+            value: 'NULL'
+            varType: string
+            variable_selector:
+            - conversation
+            - email_conf
+          id: 'true'
+          logical_operator: or
+        desc: ''
+        selected: false
+        title: SE/SENÃO 6
+        type: if-else
+      height: 204
+      id: '1732735519835'
+      position:
+        x: 3363
+        y: 314.5
+      positionAbsolute:
+        x: 3363
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1718858713759'
+          - contextString
+        desc: ''
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        prompt_template:
+        - id: e76aa31b-076f-451d-a173-44aa5706fb3a
+          role: system
+          text: "<Prompt>\n  <Personalidade>\n    <Nome>Gabriela</Nome>\n    <Descricao>\n\
+            \      Você é Gabriela, do Minha Casa Minha Vida. Fale simples, use palavras\
+            \ fáceis.\n      Ajude a pessoa a entender sobre conseguir sua casa.\n\
+            \      Evite palavras difíceis.\n    </Descricao>\n  </Personalidade>\n\
+            \  \n  <Instrucoes>\n    <PosCliqueLink>\n      \"Que bom que você viu\
+            \ o site, [nome]! Tudo simples, né? \U0001F60A\"\n      \"Quantas pessoas\
+            \ moram com você? Onde você quer morar?\"\n    </PosCliqueLink>\n    \n\
+            \    <ColetaDeEmail>\n      \"Se me passar seu e-mail, mando ajuda feita\
+            \ pra você.\"\n      \"Por e-mail, envio dicas simples. Assim você não\
+            \ perde nada.\"\n      \"Posso te ajudar com o o cadastro, me passa o\
+            \ seu email por favor.\"\n    </ColetaDeEmail>\n    \n    <CorrecaoEmail>\n\
+            \      \"Seu e-mail é [email_corrigido]? Confere se está certo?\"\n  \
+            \  </CorrecaoEmail>\n    \n    <DuvidasEsclarecimentos>\n      \"Boa pergunta!\
+            \ No e-mail explico melhor.\"\n    </DuvidasEsclarecimentos>\n    \n \
+            \   <Encerramento>\n      \"Mais algo, [nome]? Se precisar, me chame!\"\
+            \n    </Encerramento>\n  </Instrucoes>\n  \n  <RegrasGerais>\n    <EmailImportante>Diga\
+            \ que o e-mail ajuda a mandar mais detalhes.</EmailImportante>\n    <RespostasClaras>Use\
+            \ palavras simples, curtas e claras.</RespostasClaras>\n    <AmigavelFocoCasa>Seja\
+            \ amigável e fale do sonho da casa.</AmigavelFocoCasa>\n    <LimiteCaracteres>Máx\
+            \ 150 caracteres por mensagem.</LimiteCaracteres>\n    <NaoInsistirEmail>Se\
+            \ não quiserem passar o e-mail, não insista.</NaoInsistirEmail>\n    <SemNegativas>Não\
+            \ use \"Infelizmente\".</SemNegativas>\n    <NaoAgendar>Não marcar visitas\
+            \ ou ligações.</NaoAgendar>\n  </RegrasGerais>\n  \n  <Variacoes>\n  \
+            \  <Instrucoes>\n      \"Varie as palavras. Não repita sempre a mesma\
+            \ frase.\n       Ajuste conforme o cliente. Mantenha tudo simples e amigável.\"\
+            \n    </Instrucoes>\n  </Variacoes>\n  \n  <RecuperacaoDeConhecimento>\n\
+            \    {{#context#}}  \n  </RecuperacaoDeConhecimento>\n  \n  <ContextoDaConversa>\n\
+            \    {{#1718858713759.contextString#}}  \n  </ContextoDaConversa>\n  \n\
+            \  <ContextoDataHoraAtual>\n    {{#1720354307281.diaAtual#}}  \n    {{#1720354307281.diaSemana#}}\
+            \  \n  </ContextoDataHoraAtual>\n  \n</Prompt>"
+        selected: true
+        title: LLM 2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1732735562523'
+      position:
+        x: 3666
+        y: 314.5
+      positionAbsolute:
+        x: 3666
+        y: 314.5
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1732735562523.text#}}'
+        desc: ''
+        selected: false
+        title: Resposta 2
+        type: answer
+        variables: []
+      height: 102
+      id: '1732735570386'
+      position:
+        x: 3969
+        y: 314.5
+      positionAbsolute:
+        x: 3969
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config:
+            api_key: AVYhAAIjcDEyNzJlNmYyOGE2NzI0NjllYmZkYWViY2Q0ZjZiN2FkMnAxMA
+            type: bearer
+          type: api-key
+        body:
+          data:
+          - type: text
+            value: '{
+
+              "assistant": "{{#1732735562523.text#}}"
+
+              }'
+          type: json
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Adiciona ao Contexto (1)
+        type: http-request
+        url: https://fancy-lark-22049.upstash.io/rpush/{{#sys.conversation_id#}}
+        variables: []
+      height: 128
+      id: '17327356458210'
+      position:
+        x: 4272
+        y: 314.5
+      positionAbsolute:
+        x: 4272
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: Extraia o primeiro nome do cliente e o e-mail fornecidos na mensagem.
+          O nome deve ser uma string contendo o primeiro nome. O e-mail deve ser um
+          endereço de e-mail válido, que contenha um símbolo '@' seguido por um domínio,
+          como exemplo@dominio.com.
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.1
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        parameters:
+        - description: Nome do cliente
+          name: Nome
+          required: false
+          type: string
+        - description: Email do Usuário
+          name: Email
+          required: false
+          type: string
+        - description: Estado onde o cliente mora
+          name: Estado
+          required: false
+          type: string
+        - description: Cidade onde o cliente mora
+          name: Cidade
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: Extrator de parâmetros (1)
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17327404535220'
+      position:
+        x: 4575
+        y: 314.5
+      positionAbsolute:
+        x: 4575
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: 8906a434-cdad-49d4-9b28-68f3ec2dfbba
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - Email
+          - comparison_operator: contains
+            id: a5896a0b-4c7f-4033-9884-72ce9bf5a11d
+            value: Não disponível
+            varType: string
+            variable_selector:
+            - conversation
+            - Email
+          - comparison_operator: contains
+            id: f89e3316-6bca-447a-96c2-f8f33c196f9c
+            value: undefined
+            varType: string
+            variable_selector:
+            - conversation
+            - Email
+          - comparison_operator: contains
+            id: 2dbbcefb-1000-4710-867a-f6d03ad3dac6
+            value: 'NULL'
+            varType: string
+            variable_selector:
+            - conversation
+            - Email
+          - comparison_operator: contains
+            id: b3ac75f6-a80e-4db0-8b2b-f500d691710b
+            value: anonymous
+            varType: string
+            variable_selector:
+            - conversation
+            - Email
+          id: 'true'
+          logical_operator: or
+        desc: ''
+        selected: false
+        title: SE/SENÃO 6 (1)
+        type: if-else
+      height: 230
+      id: '17327406969760'
+      position:
+        x: 5181
+        y: 314.5
+      positionAbsolute:
+        x: 5181
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: sua função aqui é extrair o endereço de e-mail caso ele exista,
+          você deve extrair somente o endereço de e-mail e nada mais. Caso não tenha
+          e-mail nenhum, a sua saída deve ser sempre "undefined"
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        parameters:
+        - description: endereço de email.
+          name: Email
+          required: false
+          type: string
+        query:
+        - '17327200343550'
+        - body
+        reasoning_mode: prompt
+        selected: false
+        title: Extrator de parâmetros 3
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1733165178477'
+      position:
+        x: 2757
+        y: 314.5
+      positionAbsolute:
+        x: 2757
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 63222b8d-572a-4cf0-b8dc-94b5c120b3fc
+            value: '@'
+            varType: string
+            variable_selector:
+            - conversation
+            - Email
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: SE/SENÃO 7
+        type: if-else
+      height: 126
+      id: '1733166042979'
+      position:
+        x: 5539
+        y: 314.5
+      positionAbsolute:
+        x: 5539
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        desc: ''
+        headers: ''
+        method: post
+        params: 'E-mail:{{#conversation.Email#}}
+
+          Contato:{{#1718649258644.id_pixel#}}'
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Requisição HTTP 11
+        type: http-request
+        url: https://webhook.chatcorretor.com/webhook/c03387fa-2a40-420d-b236-d560dc9332c8
+        variables: []
+      height: 126
+      id: '1733166057163'
+      position:
+        x: 5937
+        y: 314.5
+      positionAbsolute:
+        x: 5937
+        y: 314.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(arg1: str) -> dict:\n    try:\n        # Variável para contar\
+          \ as ocorrências do link\n        specific_link = \"https://socarros.net/minha-casa-minha-vida-2024\"\
+          \n        link_count = 0\n\n        # Separar o texto em linhas e analisar\
+          \ cada uma\n        lines = arg1.splitlines()\n\n        for line in lines:\n\
+          \            # Verifica se a linha foi enviada pelo \"assistant\" e contém\
+          \ o link\n            if line.strip().startswith(\"assistant:\") and specific_link\
+          \ in line:\n                link_count += 1\n\n        # Retornar o número\
+          \ de vezes que o link foi enviado\n        return {\"link_count\": link_count}\n\
+          \    \n    except Exception as e:\n        # Retorna mensagem de erro em\
+          \ caso de falha\n        return {\"error\": str(e)}"
+        code_language: python3
+        desc: ''
+        outputs:
+          link_count:
+            children: null
+            type: number
+        selected: false
+        title: Código 4
+        type: code
+        variables:
+        - value_selector:
+          - '1718858713759'
+          - contextString
+          variable: arg1
+      height: 54
+      id: '1733257956481'
+      position:
+        x: 1848
+        y: 479.5
+      positionAbsolute:
+        x: 1848
+        y: 479.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        desc: ''
+        headers: 'apikey:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1cW5uYnZqdG9ycnhkeXRyc2F4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMTUyNDg2MiwiZXhwIjoyMDQ3MTAwODYyfQ.h9fZeiI0mKEmBEzHYPUimqIkaBqGJPrdgqJecmH88JA
+
+          Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1cW5uYnZqdG9ycnhkeXRyc2F4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMTUyNDg2MiwiZXhwIjoyMDQ3MTAwODYyfQ.h9fZeiI0mKEmBEzHYPUimqIkaBqGJPrdgqJecmH88JA'
+        isInIteration: true
+        iteration_id: '1732719213029'
+        method: get
+        params: 'id:eq.{{#1718649258644.id_pixel#}}
+
+          select:Nome'
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Requisição Pixel_conf (1)
+        type: http-request
+        url: https://suqnnbvjtorrxdytrsax.supabase.co/rest/v1/Pixel%20Benef%C3%ADcios%20Sociais?
+        variables: []
+      height: 126
+      id: '17334999677590'
+      position:
+        x: 2454
+        y: 506.5
+      positionAbsolute:
+        x: 2454
+        y: 506.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 22dea5f7-21fb-42c1-aa72-9d6f66ba10ba
+            value: 'null'
+            varType: string
+            variable_selector:
+            - '17334999677590'
+            - body
+          - comparison_operator: contains
+            id: 6d8d6dd8-26ca-4ceb-8250-61994436caef
+            value: undefined
+            varType: string
+            variable_selector:
+            - '17334999677590'
+            - body
+          id: 'true'
+          logical_operator: or
+        desc: ''
+        selected: false
+        title: SE/SENÃO 8
+        type: if-else
+      height: 152
+      id: '1733500137498'
+      position:
+        x: 2757
+        y: 479.5
+      positionAbsolute:
+        x: 2757
+        y: 479.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1718858713759'
+          - contextString
+        desc: ''
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.5
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        prompt_template:
+        - id: 36d188f9-2a89-4bd3-9f67-6c0732145eeb
+          role: system
+          text: "<Prompt>\n  <Personalidade>\n    <Nome>Gabriela</Nome>\n    <Descricao>\n\
+            \      Você é uma assistente dedicada a ajudar pessoas a conquistarem\
+            \ a casa própria\n      pelo Minha Casa Minha Vida. Seja simpática, acolhedora\
+            \ e use linguagem simples.\n      Fale como uma amiga, mostrando empatia\
+            \ pelo sonho do cliente.\n    </Descricao>\n  </Personalidade>\n  \n \
+            \ <InstrucoesDeConversa>\n    <ApresentacaoInicial>\n      \"Olá [nome],\
+            \ tudo bem? Eu sou a Gabriela, sua assistente do Minha Casa Minha Vida.\
+            \ Como posso te ajudar?\"\n    </ApresentacaoInicial>\n    <SeClienteDificuldade>\n\
+            \      \"Entendo sua preocupação com [dificuldade]. O programa Minha Casa\
+            \ Minha Vida oferece opções que podem te ajudar. Veja só:\"\n    </SeClienteDificuldade>\n\
+            \    <LinkContextualizado>\n      \"Tenho um link aqui com informações\
+            \ que podem te interessar, [nome]. Ele explica direitinho:\U0001F447\n\
+            https://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\"\
+            \n    </LinkContextualizado>\n    <EntendendoNecessidades>\n      \"Você\
+            \ já tentou financiar um imóvel antes? Quais são suas principais dúvidas\
+            \ sobre o programa?\"\n    </EntendendoNecessidades>\n    <AposEntenderNecessidades>\n\
+            \      \"Preparei um guia completo, [nome]. Dá uma olhadinha:\U0001F447\
+            \nhttps://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\"\
+            \n    </AposEntenderNecessidades>\n    <IncentivoSite>\n      \"Nesse\
+            \ site tem respostas, simulações e muito mais!\"\n    </IncentivoSite>\n\
+            \    <Cadastro>\n      \"Você pode conferir seu cadastro hoje mesmo:\U0001F447\
+            \nhttps://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\"\
+            \n    </Cadastro>\n    <IncentivoContato>\n      \"Se precisar de algo\
+            \ específico, salva meu contato, [nome]! \U0001F609\"\n    </IncentivoContato>\n\
+            \  </InstrucoesDeConversa>\n  \n  <LinkInformacoes>\n    <Orientacao>\n\
+            \      Envie o link no momento certo, após entender a necessidade do cliente.\n\
+            \      Use sempre o link puro:\n      https://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\n\
+            \      Antes de apresentar o link, use o indicador \"\U0001F447\".\n \
+            \   </Orientacao>\n    <ExemploEnvio>\n      \"[nome], confira:\U0001F447\
+            \nhttps://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\"\
+            \n    </ExemploEnvio>\n    <ExemploIncentivo>\n      \"No site há respostas,\
+            \ simulações e mais!\"\n    </ExemploIncentivo>\n    <ExemploCadastro>\n\
+            \      \"Confira seu cadastro:\U0001F447\nhttps://vemver.org/minha-casa-minha-vida/?userId={{#1718649258644.id_pixel#}}\"\
+            \n    </ExemploCadastro>\n  </LinkInformacoes>\n  \n  <RegrasGerais>\n\
+            \    <MaxCaracteres>Máx 150 caracteres por mensagem.</MaxCaracteres>\n\
+            \    <SemNegativas>Não usar \"Infelizmente\".</SemNegativas>\n    <SemInsistencia>Não\
+            \ insistir se o cliente não demonstrar interesse.</SemInsistencia>\n \
+            \   <FocoBeneficios>Concentre-se nos benefícios do programa.</FocoBeneficios>\n\
+            \    <NaoAgendar>Nunca agendar visitas ou ligações, apenas WhatsApp.</NaoAgendar>\n\
+            \    <UseEmojis>Use emojis para tornar a comunicação leve.</UseEmojis>\n\
+            \    <PriorizarConversa>Entenda as necessidades antes de enviar o link.</PriorizarConversa>\n\
+            \  </RegrasGerais>\n  \n  <Variacoes>\n    <Instrucoes>\n      Use sinônimos,\
+            \ varie a estrutura das frases, adapte ao contexto.\n      Evite repetir\
+            \ a mesma frase em cada atendimento.\n      Mantenha simpatia, clareza\
+            \ e empatia.\n    </Instrucoes>\n  </Variacoes>\n  \n  <ObservacaoNome>\n\
+            \    Nome do cliente: {{#17334999677590.body#}}\n    Use [nome] para se\
+            \ referir ao cliente.\n  </ObservacaoNome>\n  \n  <RecuperacaoDeConhecimento>\n\
+            \    {{#context#}}\n  </RecuperacaoDeConhecimento>\n  \n  <ContextoDaConversa>\n\
+            \    {{#1718858713759.contextString#}}\n  </ContextoDaConversa>\n  \n\
+            \  <ContextoDataHoraAtual>\n    {{#1720354307281.diaAtual#}}\n    {{#1720354307281.diaSemana#}}\n\
+            \  </ContextoDataHoraAtual>\n  \n</Prompt>"
+        selected: false
+        title: Gera Resposta (1)
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+            variable_selector:
+            - sys
+            - files
+          enabled: false
+      height: 98
+      id: '17335017328600'
+      position:
+        x: 3060
+        y: 682.5
+      positionAbsolute:
+        x: 3060
+        y: 682.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#17335017328600.text#}}'
+        desc: ''
+        selected: false
+        title: Resposta 3
+        type: answer
+        variables: []
+      height: 102
+      id: '1733501746468'
+      position:
+        x: 3363
+        y: 716.5
+      positionAbsolute:
+        x: 3363
+        y: 716.5
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config:
+            api_key: AVYhAAIjcDEyNzJlNmYyOGE2NzI0NjllYmZkYWViY2Q0ZjZiN2FkMnAxMA
+            type: bearer
+          type: api-key
+        body:
+          data:
+          - type: text
+            value: '{
+
+              "assistant": "{{#17335017328600.text#}}"
+
+              }'
+          type: json
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Adiciona ao Contexto (1)
+        type: http-request
+        url: https://fancy-lark-22049.upstash.io/rpush/{{#sys.conversation_id#}}
+        variables: []
+      height: 128
+      id: '17335025122050'
+      position:
+        x: 3666
+        y: 658.5
+      positionAbsolute:
+        x: 3666
+        y: 658.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -2258.6469926918485
+      y: -139.06865889737003
+      zoom: 0.7578582832552003
